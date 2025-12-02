@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Druk Wellness - Bhutanese Counsellors Network in Perth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --saffron: #FF9933;
+            --ochre: #CC7722;
+            --forest-green: #2E8B57;
+            --dark-green: #1A5D3A;
+            --warm-gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark-green);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--ochre);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--forest-green);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--ochre);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--forest-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--saffron);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--ochre);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--forest-green);
+            color: var(--forest-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--forest-green);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--forest-green);
+        }
+
+        .logo-text span {
+            color: var(--saffron);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--saffron);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Counsellors Section */
+        .counsellors {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .counsellor-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--forest-green);
+            color: white;
+        }
+
+        .counsellors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .counsellor-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .counsellor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .counsellor-img {
+            height: 200px;
+            background-color: var(--warm-gray);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .counsellor-info {
+            padding: 1.5rem;
+        }
+
+        .counsellor-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .specialty-tag {
+            background-color: var(--light-gray);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .resource-img {
+            height: 180px;
+            background-color: var(--warm-gray);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .resource-info {
+            padding: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--forest-green);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--warm-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background-color: var(--forest-green);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(42, 157, 143, 0.9), rgba(42, 157, 143, 0.9)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--saffron);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ddd;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--saffron);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--saffron);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--warm-gray);
+        }
+
+        .modal h2 {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                box-shadow: var(--shadow);
+                padding: 1rem 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.8rem 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <!-- This would be an actual logo image -->
+                    <i class="fas fa-hands-helping" style="font-size: 2rem; color: var(--forest-green);"></i>
+                </div>
+                <div class="logo-text">Druk <span>Wellness</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#counsellors">Find a Counsellor</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#" id="loginBtn">Counsellor Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Connecting Bhutanese Counsellors in Perth</h1>
+            <p>Strengthening Community Wellbeing through culturally responsive counselling and professional collaboration</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary" id="counsellorBtn">I Am a Counsellor</a>
+                <a href="#counsellors" class="btn btn-secondary">I'm Seeking Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Our Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Professional Network</h3>
+                    <p>Connect with fellow Bhutanese counsellors for collaboration and support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Peer Supervision</h3>
+                    <p>Access culturally-aware supervision opportunities and guidance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Resource Hub</h3>
+                    <p>Share and find relevant counselling materials and research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Community Access</h3>
+                    <p>Easily find a counsellor who understands your cultural background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Our Story & Mission</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The Bhutanese community in Perth has grown significantly over the past decade, with many individuals and families facing unique challenges related to migration, acculturation, and adjustment to Australian society.</p>
+                    <p>Although local community associations provide general support, these initiatives are largely informal and lack a structured professional framework for mental health and counselling.</p>
+                    <p>Druk Wellness was created to bridge this gap by establishing a digital platform that connects Bhutanese counsellors in Perth, promotes supervision and collaboration, and increases access to culturally responsive counselling for the Bhutanese community.</p>
+                    <a href="#" class="btn btn-outline">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Community gathering">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counsellors Section -->
+    <section class="counsellors" id="counsellors">
+        <div class="container">
+            <h2>Find a Counsellor</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Taking the step to seek support is a sign of strength. Finding a counsellor who shares or deeply understands your cultural background can make all the difference.</p>
+            
+            <div class="counsellor-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="youth">Youth</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+                <button class="filter-btn" data-filter="trauma">Trauma</button>
+                <button class="filter-btn" data-filter="acculturation">Acculturation</button>
+            </div>
+            
+            <div class="counsellors-grid">
+                <!-- Counsellor 1 -->
+                <div class="counsellor-card" data-category="family acculturation">
+                    <div class="counsellor-img" style="background-image: url('https://images.unsplash.com/photo-1551836026-d5c88ac5d691?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="counsellor-info">
+                        <h3>Dr. Karma Wangchuk</h3>
+                        <p><strong>Qualifications:</strong> PhD in Counselling Psychology, ACA Registered</p>
+                        <p><strong>Languages:</strong> English, Dzongkha, Nepali</p>
+                        <p><strong>Location:</strong> Perth CBD</p>
+                        <div class="counsellor-specialties">
+                            <span class="specialty-tag">Family Therapy</span>
+                            <span class="specialty-tag">Acculturation</span>
+                            <span class="specialty-tag">Relationship Issues</span>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</button>
+                    </div>
+                </div>
+                
+                <!-- Counsellor 2 -->
+                <div class="counsellor-card" data-category="youth trauma">
+                    <div class="counsellor-img" style="background-image: url('https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="counsellor-info">
+                        <h3>Sonam Choden</h3>
+                        <p><strong>Qualifications:</strong> Master of Counselling, PACFA Registered</p>
+                        <p><strong>Languages:</strong> English, Dzongkha, Sharchop</p>
+                        <p><strong>Location:</strong> Canning Vale</p>
+                        <div class="counsellor-specialties">
+                            <span class="specialty-tag">Youth Counselling</span>
+                            <span class="specialty-tag">Trauma</span>
+                            <span class="specialty-tag">Anxiety</span>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</button>
+                    </div>
+                </div>
+                
+                <!-- Counsellor 3 -->
+                <div class="counsellor-card" data-category="acculturation family">
+                    <div class="counsellor-img" style="background-image: url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="counsellor-info">
+                        <h3>Pema Lhamo</h3>
+                        <p><strong>Qualifications:</strong> Master of Social Work, AASW Accredited</p>
+                        <p><strong>Languages:</strong> English, Dzongkha</p>
+                        <p><strong>Location:</strong> Mirrabooka</p>
+                        <div class="counsellor-specialties">
+                            <span class="specialty-tag">Acculturation</span>
+                            <span class="specialty-tag">Family Therapy</span>
+                            <span class="specialty-tag">Grief & Loss</span>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2>Community Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="resource-info">
+                        <h3>Understanding Mental Health Stigma</h3>
+                        <p>A guide to recognizing and addressing mental health stigma in the Bhutanese community.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="resource-info">
+                        <h3>Navigating Intergenerational Conflict</h3>
+                        <p>Strategies for managing cultural differences between generations in a new country.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="resource-info">
+                        <h3>Culturally Responsive Therapy Approaches</h3>
+                        <p>An overview of therapeutic approaches that respect and incorporate cultural values.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Community Says</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Druk Wellness has been instrumental in connecting me with other Bhutanese counsellors. The peer supervision sessions have greatly enhanced my professional practice and provided much-needed cultural context to my work."</p>
+                    <p class="testimonial-author">- Dr. Karma Wangchuk, Counselling Psychologist</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"As a community member, finding a counsellor who understands our cultural background made all the difference. Druk Wellness helped me connect with someone who truly understands the challenges of migration and acculturation."</p>
+                    <p class="testimonial-author">- Tashi Dorji, Community Member</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"The resources and professional network available through Druk Wellness have been invaluable for my practice. It's wonderful to have a platform specifically designed for Bhutanese mental health professionals in Perth."</p>
+                    <p class="testimonial-author">- Sonam Choden, Counsellor</p>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <span class="testimonial-dot active" data-slide="0"></span>
+                    <span class="testimonial-dot" data-slide="1"></span>
+                    <span class="testimonial-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Our Growing Network</h2>
+            <p>Whether you're a Bhutanese counsellor looking to connect with peers or a community member seeking culturally responsive support, Druk Wellness is here for you.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-secondary" id="joinCounsellorBtn">Join as a Counsellor</a>
+                <a href="#counsellors" class="btn btn-primary">Find Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Druk Wellness</h3>
+                    <p>Connecting Bhutanese Counsellors in Perth. Strengthening Community Wellbeing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#counsellors">Find a Counsellor</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>For Counsellors</h3>
+                    <ul>
+                        <li><a href="#">Join Our Network</a></li>
+                        <li><a href="#">Peer Supervision</a></li>
+                        <li><a href="#">Resource Library</a></li>
+                        <li><a href="#">Professional Development</a></li>
+                        <li><a href="#" id="footerLoginBtn">Counsellor Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Perth, Western Australia</li>
+                        <li><i class="fas fa-phone"></i> +61 8 9123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@drukwellness.org.au</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Druk Wellness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Counsellor Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="#">Join our network</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Login Modal
+        const loginBtn = document.getElementById('loginBtn');
+        const footerLoginBtn = document.getElementById('footerLoginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+        const counsellorBtn = document.getElementById('counsellorBtn');
+        const joinCounsellorBtn = document.getElementById('joinCounsellorBtn');
+
+        function openLoginModal() {
+            loginModal.style.display = 'flex';
+        }
+
+        function closeLoginModal() {
+            loginModal.style.display = 'none';
+        }
+
+        loginBtn.addEventListener('click', openLoginModal);
+        footerLoginBtn.addEventListener('click', openLoginModal);
+        counsellorBtn.addEventListener('click', openLoginModal);
+        joinCounsellorBtn.addEventListener('click', openLoginModal);
+        closeModal.addEventListener('click', closeLoginModal);
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === loginModal) {
+                closeLoginModal();
+            }
+        });
+
+        // Counsellor Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const counsellorCards = document.querySelectorAll('.counsellor-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                counsellorCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = this.getAttribute('data-slide');
+                
+                // Remove active class from all dots and testimonials
+                testimonialDots.forEach(d => d.classList.remove('active'));
+                testimonials.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked dot and corresponding testimonial
+                this.classList.add('active');
+                testimonials[slideIndex].classList.add('active');
+            });
+        });
+
+        // Auto-rotate testimonials
+        let currentTestimonial = 0;
+        function rotateTestimonials() {
+            testimonialDots.forEach(d => d.classList.remove('active'));
+            testimonials.forEach(t => t.classList.remove('active'));
+            
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            
+            testimonialDots[currentTestimonial].classList.add('active');
+            testimonials[currentTestimonial].classList.add('active');
+        }
+
+        setInterval(rotateTestimonials, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login functionality would be implemented in a full version of the site.');
+            closeLoginModal();
+        });
+    </script>
+</body>
+</html>
